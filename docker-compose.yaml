@@ -1,0 +1,12 @@
+services:
+  webserver:
+    image: goprome:latest
+    ports:
+      - 2112:2112
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ${PWD}/prometheus.yaml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
